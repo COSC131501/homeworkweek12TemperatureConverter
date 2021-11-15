@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Calculator</title>
+</head>
+
+<style>
+ body {
+        background: linear-gradient(to right, rgb(6, 36, 170), rgb(240, 237, 77) 100%);
+        color: white;
+     }
+     .tableclass {
+         border: solid rgb(159, 160, 233) 20px;
+     }
+     img {
+         width: 0%; 
+         height: 100%; 
+         max-width: 80%;
+     }
+     a:link, a:visited {
+         font-weight: bold;
+         text-decoration: none;
+         color: white;
+     }
+     img {
+         border-radius: 50%;
+         height:400px;
+         width:600px;
+     } 
+     td
+     {
+  height: 90px;;
+
+     }
+</style>
+     
+<body>
+  
+    <table class="tableclass">
+        <tr>
+            <td>
+
+    <form name="theform">
+    <table> 
+    <header style="font-family:'Times New Roman', Times, serif; color:white; font-size: 50px;">
+    <h1>Temperature Converter</h1></header><br>
+    <p>
+    <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color:white; font-size: 30px;">Calculate farenheit to celsius: ex. (68°F-32)x5/9=20°C</h4>
+    <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color:white; font-size: 30px;">Calculate celcius to farenheit: ex. (20°C*1.8)+32=68°F</h4><br>
+
+        <tr style="text-align:right">
+            <td rowspan="2"><img src="weather.jpg"></td>
+            <td style="float: right"><h3>Enter temperature value in Celcius:</h3>
+                <input id="celsius" type="number" placeholder="Celcius"
+                oninput="celsiusToFarenheit(value)" onchange="celsiusToFarenheit(value)"></p>
+
+                <p>Fahrenheit: <span class="fahrenheit"></span></p><input id="fahrenheit" type="number"
+                oninput="farenheitToCelsius(value)" onchange="farenheitToCelsius(value)"></p>
+        </tr>
+
+        <tr style="text-align:right">
+            <td colspan="2">
+                <input style = "position:relative; top:-188px" type="button" name="calc" value="Calculate" onclick="calculate();">
+                <input style = "position:relative; top:-188px" type="button" name="clear" value="Clear" onclick="clearinfo();">
+            </td>
+        </tr>
+
+        <tr style="text-align:right">
+            <td rowspan="2"></td>
+            <td style="float: right"><h3>Enter temperature value in Farenheit:</h3>
+                <input id="farenheit" type="number" placeholder="Farenheit"
+                oninput="farenheitToCelsius(value)" onchange="farenheitToCelsius(value)"></p>
+
+                <p>Celcius:<span class="celsius">
+
+        <tr style="text-align:right">
+            <td colspan="2">
+                <input style = "position:relative; top:35px" type="button" name="calc" value="Calculate" onclick="calculate();">
+                <input style = "position:relative; top:35px" type="button" name="clear" value="Clear" onclick="clearinfo();">
+            </td>
+        </tr>
+
+        </table>
+
+        </td>
+        </tr>
+        </table>
+        </style>
+
+        <script>
+
+            function calculate() {
+        // declare the variables
+        var celsius; 
+        var farenheit; 
+       
+
+        // Get the values from the text fields
+        document.theform.celsius.value = " ";
+        document.theform.farenheit.value = " ";
+        celsius = getElementById(document.theform.celsius.value);
+        farenheit = getElementById(document.theform.farenheit.value);
+            }
+            
+           function celsiusToFarenheit(temp) {
+        document.querySelector(".fahrenheit").innerHTML=(temp*1.8)+32
+           }
+           
+           function farenheitToCelsius(temp) {
+        document.querySelector(".celsius").innerHTML=(temp-32)*5/9;
+           }
+
+           function clearinfo() {
+        document.theform.celsius.value = " ";
+        document.theform.farenheit.value = " ";
+
+        
+        document.getElementById("celsius").innerHTML = " ";
+        document.getElementById("farenheit").innerHTML = " ";
+    }
+        </script>
+</form>
+</body><br><br><br>
+
+<a href="http://csnet.southtexascollege.edu/localuser/jflor118/">Go Back To Homepage: Juan L. Flores</a>
+
+</html>
